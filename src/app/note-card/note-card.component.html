@@ -1,0 +1,10 @@
+<div *ngIf="note">
+	<fieldset>
+		<legend>
+			{{note.author}} 
+			<button title="delete item" (click)="handleDeleteClick()">x</button>
+		</legend>
+		{{note.content | truncate:150:'...'}} 
+		<p><small><b>{{note.touched_at | date}}</b></small></p>		
+	</fieldset>
+</div>

@@ -1,0 +1,39 @@
+<div class="modal is-active">
+	<div class="modal-background"></div>
+	<div class="modal-content">
+		<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Post a new note</p>
+				<button class="delete" aria-label="close" (click)="handleClose()"></button>
+			</header>
+			<section class="modal-card-body">
+				<form [formGroup]="form">
+					<div class="field">
+						<label class="label">Author Name</label>
+						<div class="control">
+							<input class="input form-control" type="text" formControlName="author">
+						</div>
+					</div>
+					<div class="field">
+						<label class="label">What would you like to say?</label>
+						<div class="control">
+							<textarea class="textarea" formControlName="content"></textarea>
+						</div>
+					</div>
+				</form>				
+				
+				<article *ngIf="form.touched && form.invalid" class="message is-danger">
+					<div class="message-header">
+						Please fill in all the files!
+					</div>					
+				</article>
+			</section>
+			<footer class="modal-card-foot">
+				<button class="button is-success" (click)="handleSave()" [disabled]="form.invalid">Save changes</button>
+				<button class="button" (click)="handleClose()">Cancel</button>
+			</footer>
+		</div>
+	</div>
+
+	<button class="modal-close is-large" aria-label="close" (click)="handleClose()"></button>
+</div>
