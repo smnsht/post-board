@@ -11,7 +11,7 @@ import { NotesService } from '../notes.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [    
     'fieldset { border: 1px solid black; padding: 1em; margin: 1em; }',
-    '::ng-deep legend { border: 1px solid black; padding: .2em; }'    
+    ':host ::ng-deep legend { border: 1px solid black; padding: .2em; }'    
   ],  
   template: `
     <div>
