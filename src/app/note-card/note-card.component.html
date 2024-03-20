@@ -1,10 +1,10 @@
-<div *ngIf="note">
-	<fieldset>
+<app-note-card-wrapper>
+	<ng-container *ngIf="note">
 		<legend>
 			{{note.author}} 
 			<button title="delete item" (click)="handleDeleteClick()">x</button>
 		</legend>
 		{{note.content | truncate:150:'...'}} 
 		<p><small><b>{{note.touched_at | date}}</b></small></p>		
-	</fieldset>
-</div>
+	</ng-container>	
+</app-note-card-wrapper>

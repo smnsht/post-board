@@ -1,4 +1,5 @@
 <main class="main">
+  
   <h1 class="title has-text-centered">Welcome to post board</h1>
 
   <app-loader *ngIf="loading$ | async" />
@@ -9,38 +10,25 @@
     (createNoteClicked)="createNote($event)"
   />
 
-  <div class="content columns">
+  <div class="content columns">    
 
     <ng-container *ngIf="notes$ | async as notes">
-      <div class="column is-one-quarter">
-        <div>
-          <fieldset class="add-new-note">
-            <legend>Add new note...</legend>
-            <p title="click me to add new note" (click)="showDialog()">&#x2612;</p>
-          </fieldset>  
-        </div>        
-
-        <ng-container *ngFor="let note of notes; index as i">
-          <app-note-card *ngIf="i % 4 == 0" [note]="note" />
-        </ng-container>        
-      </div>
-
-      <div class="column is-one-quarter">        
-        <ng-container *ngFor="let note of notes; index as i">
-          <app-note-card *ngIf="i % 4 == 1" [note]="note"/>          
-        </ng-container>
-      </div>
 
       <div class="column is-one-quarter">
-        <ng-container *ngFor="let note of notes; index as i">
-          <app-note-card *ngIf="i % 4 == 2" [note]="note"/>                    
-        </ng-container>
+        <app-note-card-wrapper>
+          <legend>Add new note...</legend>
+          <p 
+            title="click me to add new note" 
+            class="add-new-note" 
+            (click)="showDialog()"
+          >
+            &#x2612;
+          </p>
+        </app-note-card-wrapper>        
       </div>
 
-      <div class="column is-one-quarter">
-        <ng-container *ngFor="let note of notes; index as i">
-          <app-note-card *ngIf="i % 4 == 3" [note]="note"/>                    
-        </ng-container>
+      <div class="column is-one-quarter" *ngFor="let note of notes">
+        <app-note-card [note]="note" />
       </div>      
     </ng-container>
   </div>

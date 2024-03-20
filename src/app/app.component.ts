@@ -4,7 +4,7 @@ import { NotesService } from './notes.service';
 import { LoaderComponent } from './loader/loader.component';
 import { BehaviorSubject } from 'rxjs';
 import { NoteDialogComponent } from './note-dialog/note-dialog.component';
-import { NoteCardComponent } from './note-card/note-card.component';
+import { NoteCardComponent, NoteCardWrapperComponent } from './note-card/note-card.component';
 import { Note } from './note.model';
 
 @Component({
@@ -14,6 +14,7 @@ import { Note } from './note.model';
   imports: [
     CommonModule, 
     LoaderComponent,
+    NoteCardWrapperComponent,
     NoteCardComponent,
     NoteDialogComponent    
   ],

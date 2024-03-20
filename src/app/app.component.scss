@@ -2,18 +2,12 @@ main {
 	padding: 1em;
 }
 
-.add-new-note {
-	p {
-		padding: 1px;
-		margin: 1px;
-		font-size: 5em;
-		text-align: center;
-	}
+div.content {
+	display: flex;
+	flex-flow: wrap;
 }
 
-/* TODO: add to library - shared with 'note-card' component */
-fieldset {
-	border: 1px solid black;
-	padding: 1em;
-	margin: 1em;
+p.add-new-note {
+	font-size: 5em;
+	text-align: center;
 }

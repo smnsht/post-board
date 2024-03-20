@@ -8,6 +8,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   template: '<div class="loader"></div>',
   styleUrl: './loader.component.scss'
 })
-export class LoaderComponent {
-
-}
+export class LoaderComponent {}
